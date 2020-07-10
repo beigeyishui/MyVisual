@@ -12,6 +12,7 @@ const data = {
     { name: '被引用', color: '#4fbaf4' }
   ]
 }
+
 /** 绘制图例 */
 //  {
 //    container: '#legend',

@@ -14,6 +14,7 @@ import d3 from './modules/d3'
 import g6 from './modules/g6'
 import zrender from './modules/zrender'
 
+import agentRouter from './modules/agent'
 import tableRouter from './modules/table'
 import nestedRouter from './modules/nested'
 
@@ -205,6 +206,7 @@ export const asyncRoutes = [
   componentsRouter,
   chartsRouter,
   nestedRouter,
+  agentRouter,
   tableRouter,
   echarts,
   d3,
@@ -420,7 +422,26 @@ export const asyncRoutes = [
       }
     ]
   },
-
+  {
+    path: '/template2',
+    component: Layout,
+    redirect: '/template2/index',
+    name: 'Template',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/template/index'),
+        name: 'template-index',
+        meta: { title: 'vue页面模板', icon: 'link' }
+      }
+    ]
+  },
+  {
+    path: '/test',
+    component: () => import('@/views/test/index'),
+    name: 'Test',
+    meta: { title: '测试页面', icon: 'link' }
+  },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]

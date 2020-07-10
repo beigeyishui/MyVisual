@@ -1,4 +1,4 @@
-const { notEmpty } = require('../utils.js')
+const {notEmpty} = require('../utils.js')
 
 module.exports = {
   description: 'generate store',
@@ -8,37 +8,37 @@ module.exports = {
     message: 'store name please',
     validate: notEmpty('name')
   },
-  {
-    type: 'checkbox',
-    name: 'blocks',
-    message: 'Blocks:',
-    choices: [{
-      name: 'state',
-      value: 'state',
-      checked: true
-    },
     {
-      name: 'mutations',
-      value: 'mutations',
-      checked: true
-    },
-    {
-      name: 'actions',
-      value: 'actions',
-      checked: true
-    }
-    ],
-    validate(value) {
-      if (!value.includes('state') || !value.includes('mutations')) {
-        return 'store require at least state and mutations'
+      type: 'checkbox',
+      name: 'blocks',
+      message: 'Blocks:',
+      choices: [{
+        name: 'state',
+        value: 'state',
+        checked: true
+      },
+        {
+          name: 'mutations',
+          value: 'mutations',
+          checked: true
+        },
+        {
+          name: 'actions',
+          value: 'actions',
+          checked: true
+        }
+      ],
+      validate(value) {
+        if (!value.includes('state') || !value.includes('mutations')) {
+          return 'store require at least state and mutations'
+        }
+        return true
       }
-      return true
     }
-  }
   ],
   actions(data) {
     const name = '{{name}}'
-    const { blocks } = data
+    const {blocks} = data
     const options = ['state', 'mutations']
     const joinFlag = `,
   `

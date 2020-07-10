@@ -1,31 +1,34 @@
 /** 模板 */
 <template>
-  <div class="base-container">
-    <div style="width: 100%; height: 100%; background: bisque;" />
-  </div>
+  <div class="app-container" />
 </template>
 
 <script>
 export default {
-  name: 'Index',
+  components: {
+
+  },
+  props: {
+
+  },
   data() {
     return {
     }
   },
+  computed: {
+
+  },
   mounted() {
   },
   methods: {
-
+    $_private_update() {
+      // ... 私有方法
+    }
   }
 }
 </script>
 
-<style scoped>
-.base-container{
-  position: relative;
-  padding: 20px;
-  width: 100%;
-  height: calc(100vh - 84px);
-}
+<style lang="scss" scoped>
+
 </style>
 

@@ -2,7 +2,8 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: '/vue-element-admin/user/login',
+    baseURL: process.env.VUE_APP_TABLE_API,
+    url: '/user/login',
     method: 'post',
     data
   })

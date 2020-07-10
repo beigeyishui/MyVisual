@@ -30,7 +30,7 @@ export default {
   padding: 20px;
   width: 100%;
   height: calc(100vh - 84px);
-  background: #F9FAFF;
+  background: #F3F3F3;
 }
 
 .chart-container {
